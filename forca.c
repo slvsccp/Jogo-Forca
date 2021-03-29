@@ -37,6 +37,29 @@ void desenhaforca() {
     printf("\n");
 }
 
+void adicionapalavra() {
+    char quer;
+
+    printf("Você deseja adicionar uma nova palavra no jogo? (S/N)");
+    scanf(" %c", &quer);
+
+    if(quer == 'S') {
+
+        char novapalavra[20];
+        printf("Qual a nova palavra? ");
+        scanf("%s", novapalavra);
+
+        FILE* f;
+
+        f = fopen("palavras.txt", "r+");
+
+        fprintf(f, "\n%s", novapalavra);
+
+        fclose(f);
+
+    }
+}
+
 void escolhepalavra() {
     FILE* f;
 
